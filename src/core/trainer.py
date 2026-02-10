@@ -183,7 +183,7 @@ def train_model(
             best_val_acc = val_acc
             os.makedirs(model_dir, exist_ok=True)
             torch.save(model.state_dict(), os.path.join(model_dir, "best_model.pt"))
-            print(f"  ✅ New best model saved! (Val Acc: {val_acc:.1f}%)")
+            print(f"  [BEST] New best model saved! (Val Acc: {val_acc:.1f}%)")
 
         print()
 
