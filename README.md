@@ -25,6 +25,11 @@ Out of 5,000 test reviews:
 - **2,301** positives correctly identified, 205 false negatives
 - The model is slightly better at detecting positive sentiment
 
+### Sample Predictions
+![Sample Predictions](assets/sample_predictions.png)
+
+The model is extremely confident on clear sentiment — strongly positive and negative reviews get 99.8-100% confidence. Even ambiguous texts like "Not bad, not great" and "Meh. It was okay I guess" are correctly classified as negative, showing the model learned that lukewarm language in movie reviews usually means disappointment.
+
 ### Architecture
 ![Architecture](assets/architecture.png)
 
