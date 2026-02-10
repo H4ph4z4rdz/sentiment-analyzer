@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+
+# Model files (too large for git)
+models/
+*.pt
+*.bin
+*.safetensors
+
+# Logs
+logs/
+*.log
+
+# Data cache
+.cache/
+data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Hugging Face cache
+.huggingface/

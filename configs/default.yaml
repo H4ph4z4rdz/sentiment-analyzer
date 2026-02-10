@@ -1,0 +1,42 @@
+# Sentiment Analyzer Configuration
+# ================================
+
+# Model settings
+model:
+  name: "distilbert-base-uncased"    # Pre-trained transformer model
+  num_labels: 2                       # Binary: positive / negative
+  max_length: 256                     # Max tokens per input (BERT max is 512)
+
+# Training settings
+training:
+  epochs: 3                           # Fine-tuning epochs (BERT converges fast)
+  batch_size: 16                      # Batch size (adjust based on GPU memory)
+  learning_rate: 2.0e-5               # Classic BERT fine-tuning LR
+  weight_decay: 0.01                  # L2 regularization
+  warmup_ratio: 0.1                   # Warm up LR for first 10% of steps
+  max_grad_norm: 1.0                  # Gradient clipping
+  fp16: true                          # Mixed precision (faster on RTX GPUs)
+
+# Data settings
+data:
+  dataset: "imdb"                     # Hugging Face dataset name
+  train_split: "train"
+  test_split: "test"
+  max_train_samples: 25000            # Use full training set
+  max_test_samples: 5000              # Subset for faster evaluation
+  validation_ratio: 0.1               # 10% of train for validation
+
+# Output settings
+output:
+  model_dir: "models/sentiment-model"
+  log_dir: "logs"
+
+# UI settings
+ui:
+  port: 7862
+  examples:
+    - "This movie was absolutely fantastic! The acting was superb and the plot kept me on the edge of my seat."
+    - "Terrible film. Waste of time. The dialogue was cringeworthy and the story made no sense."
+    - "It was okay. Nothing special but not terrible either. Some good moments mixed with boring parts."
+    - "A masterpiece of modern cinema. Every frame is beautifully crafted."
+    - "I walked out of the theater halfway through. Couldn't take it anymore."
